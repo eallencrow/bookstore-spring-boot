@@ -1,4 +1,4 @@
-package com.github.eallencrow;
+package com.github.eallencrow.bookstore;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

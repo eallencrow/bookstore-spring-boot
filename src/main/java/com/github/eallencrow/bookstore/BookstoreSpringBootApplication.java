@@ -1,4 +1,4 @@
-package com.github.eallencrow;
+package com.github.eallencrow.bookstore;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
