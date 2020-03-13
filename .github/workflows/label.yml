@@ -18,4 +18,4 @@ jobs:
       uses: undefinedlabs/scope-for-gradle-action@v1
       with:
         dsn: ${{secrets.SCOPE_DSN}}
-        command: ls
+        command: ./gradlew build
