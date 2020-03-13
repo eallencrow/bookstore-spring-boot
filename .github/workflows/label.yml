@@ -17,4 +17,5 @@ jobs:
     - name: Scope for Gradle
       uses: undefinedlabs/scope-for-gradle-action@v1
       with:
+        dsn: ${{secrets.SCOPE_DSN}}
         command: ./gradlew test
