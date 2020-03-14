@@ -30,6 +30,7 @@ sonarqube {
     property "sonar.projectKey", "eallencrow_bookstore-spring-boot"
     property "sonar.organization", "eallencrow"
     property "sonar.host.url", "https://sonarcloud.io"
+    property "sonar.login", "1ea63a9bc526629873524e77680cb1e444fc7a5c"
   }
 }
 
