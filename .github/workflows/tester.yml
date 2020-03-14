@@ -20,5 +20,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Run gradle Build
-      run: ./gradlew build sonarqube -Dsonar.login=1ea63a9bc526629873524e77680cb1e444fc7a5c
+      run: ./gradlew build sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.pullrequest.branch=$GITHUB_REF
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
