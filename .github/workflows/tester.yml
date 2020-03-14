@@ -31,5 +31,4 @@ jobs:
     - name: Run Sonar Scan
       uses: eskatos/gradle-command-action@v1
       with:
-        arguments: sonarqube
-        arguments: ${{ secrets.SONAR_TOKEN }}
+        arguments: sonarqube -D${{ secrets.SONAR_TOKEN }}
