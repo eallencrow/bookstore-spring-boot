@@ -5,14 +5,12 @@
 # file with configuration.  For more information, see:
 # https://github.com/actions/labeler/blob/master/README.md
 
-name: Tester
+name: Pull Request Verifier
 on: [pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -23,3 +21,15 @@ jobs:
       run: chmod +x gradlew
     - name: Run gradle Build
       run: ./gradlew build
+  sonar-scan:
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Run Sonar Scan
+      uses: eskatos/gradle-command-action@v1
+      with:
+        arguments: sonarqube
+        arguments: ${{ secrets.SONAR_TOKEN }}
