@@ -43,7 +43,7 @@ public class Book {
 		
 		public static Genre getGenre(String text) {
 			for (Genre g : Genre.values()) {
-				if (text.toLowerCase().equals(g.value)) {
+				if (g.value.equalsIgnoreCase(text)) {
 					return g;
 				}
 			}
