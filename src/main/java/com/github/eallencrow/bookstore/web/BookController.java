@@ -2,6 +2,7 @@ package com.github.eallencrow.bookstore.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,6 +22,11 @@ public class BookController {
 	@GetMapping
 	public Iterable<Book> getBooks() {
 		return service.getBooks();
+	}
+	
+	@GetMapping("/{id}")
+	public Book findBookById(@PathVariable("id") int bookId) {
+		return service.getBook(bookId);
 	}
 	
 	@GetMapping("/search")
