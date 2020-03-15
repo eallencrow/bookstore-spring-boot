@@ -29,10 +29,10 @@ public class BookController {
 			@RequestParam(required=false) String author,
 			@RequestParam(required=false) String genre
 			) throws GenreException {
-		if (genre != null && Genre.valueOf(genre) == null) {
+		if (Genre.getGenre(genre) == null) {
 			throw new GenreException(genre);
 		}
-		Genre g = genre == null ? null : Genre.valueOf(genre);
+		Genre g = Genre.getGenre(genre);
 		return service.searchBooks(title, author, g);
 	}
 	
