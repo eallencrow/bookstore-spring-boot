@@ -15,6 +15,8 @@ repositories {
 	mavenCentral()
 }
 
+project.tasks["sonarqube"].dependsOn "jacocoTestReport"
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -32,6 +34,12 @@ sonarqube {
     property "sonar.organization", "eallencrow"
     property "sonar.host.url", "https://sonarcloud.io"
   }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
 }
 
 test {
