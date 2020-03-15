@@ -29,7 +29,7 @@ public class BookController {
 			@RequestParam(required=false) String author,
 			@RequestParam(required=false) String genre
 			) throws GenreException {
-		if (Genre.getGenre(genre) == null) {
+		if (genre != null && Genre.getGenre(genre) == null) {
 			throw new GenreException(genre);
 		}
 		Genre g = Genre.getGenre(genre);
