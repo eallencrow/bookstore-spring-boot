@@ -31,7 +31,7 @@ public class Book {
 	}
 		
 	@Getter
-	public static enum Genre {
+	public enum Genre {
 		THRILLER("thriller"),ROMANCE("romance"),COMEDY("comedy"),FANTASY("fantasy"),SCIENCE_FICTION("science fiction"),
 		MYSTERY("mystery"),BUSINESS("business"),HISTORY("history");
 		
@@ -50,6 +50,7 @@ public class Book {
 			return null;
 		}
 		
+		@Override
 		public String toString() {
 			return this.value;
 		}
