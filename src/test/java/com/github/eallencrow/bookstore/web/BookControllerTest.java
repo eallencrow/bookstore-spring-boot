@@ -73,5 +73,13 @@ public class BookControllerTest {
 		ResponseEntity<String> response = restTemplate.getForEntity("http://localhost:" + port + "/books/search?genre=bears", String.class);
 		assertEquals(500, response.getStatusCodeValue());
 	}
+	
+	@Test
+	public void testGetBookById() {
+		Book b = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "fantasy");
+		when(service.getBook(1)).thenReturn(b);
+		Book book = restTemplate.getForObject("http://localhost:" + port + "/books/1", Book.class);
+		assertEquals(b, book);
+	}
 
 }
